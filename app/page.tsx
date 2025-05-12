@@ -87,7 +87,7 @@ export default function Home() {
             transition={{ staggerChildren: 0.2 }}
           >
             <motion.div variants={featureVariants}>
-              <Card className="h-full transition-shadow hover:shadow-xl dark:hover:shadow-primary/10">
+              <Card className="h-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl dark:hover:shadow-primary/10">
                 <CardHeader className="items-center">
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <ShieldCheck className="h-8 w-8 text-primary" />
@@ -102,7 +102,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={featureVariants}>
-              <Card className="h-full transition-shadow hover:shadow-xl dark:hover:shadow-primary/10">
+              <Card className="h-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl dark:hover:shadow-primary/10">
                 <CardHeader className="items-center">
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <Target className="h-8 w-8 text-primary" />
@@ -117,7 +117,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={featureVariants}>
-              <Card className="h-full transition-shadow hover:shadow-xl dark:hover:shadow-primary/10">
+              <Card className="h-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl dark:hover:shadow-primary/10">
                 <CardHeader className="items-center">
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <TrendingUp className="h-8 w-8 text-primary" />
@@ -190,9 +190,9 @@ export default function Home() {
               }
             ].map((focus, index) => (
               <motion.div variants={featureVariants} key={index}>
-                <Card className="h-full transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-accent/10 flex flex-col">
+                <Card className="h-full transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-accent/10 flex flex-col group">
                   <CardHeader className={`items-center pt-6 pb-4 ${focus.bgColor}`}>
-                    <focus.icon className={`h-10 w-10 mb-3 ${focus.color}`} />
+                    <focus.icon className={`h-10 w-10 mb-3 ${focus.color} group-hover:scale-110 transition-transform duration-300 ease-in-out`} />
                     <CardTitle className={`text-xl ${focus.color}`}>{focus.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow pt-4 text-center">
@@ -201,7 +201,7 @@ export default function Home() {
                     </p>
                   </CardContent>
                   <div className="p-4 pt-0 mt-auto">
-                    <Button variant="ghost" asChild className={`w-full text-sm ${focus.color} hover:${focus.color}`}>
+                    <Button variant="ghost" asChild className={`w-full text-sm ${focus.color} hover:${focus.bgColor} hover:text-${focus.color.split('-')[1]}-600 dark:hover:text-${focus.color.split('-')[1]}-400 transition-all duration-300 ease-in-out`}>
                       <Link href={focus.href}>
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
