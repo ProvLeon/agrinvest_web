@@ -97,7 +97,7 @@ const Header = () => {
         <motion.div variants={logoVariants} initial="hidden" animate="visible">
           <Link href="/" className="flex items-center gap-2 group">
             <Leaf className="h-7 w-7 text-primary transition-transform group-hover:rotate-[-12deg] duration-300 ease-out" />
-            <span className="text-2xl font-bold text-primary group-hover:text-primary/90 transition-colors">
+            <span className="text-2xl font-bold text-primary group-hover:text-primary/90 transition-colors font-heading">
               Agrinvest
             </span>
           </Link>
@@ -176,7 +176,7 @@ const Header = () => {
               <SheetHeader className="mb-6">
                 <SheetTitle className="flex items-center gap-2 text-left">
                   <Leaf className="h-6 w-6 text-primary" />
-                  <span className="text-xl font-bold text-primary">Agrinvest</span>
+                  <span className="text-xl font-bold text-primary font-heading">Agrinvest</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-2">

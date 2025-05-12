@@ -1,7 +1,9 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config = {
   darkMode: ["class"],
+  plugins: [tailwindcssAnimate],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -78,12 +80,12 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-lexend)", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
     },
-  },
-  plugins: [require("tailwindcss-animate")],
+  }
 } satisfies Config
 
 export default config

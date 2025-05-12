@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, MapPin, Users, Quote, Target, CheckCircle } from 'lucide-react';
 
-// TODO: Define Metadata properly if not using generateMetadata
-
 
 const AboutComponent = () => {
   const sectionVariants = {
@@ -33,7 +31,7 @@ const AboutComponent = () => {
       {/* Page Title */}
       <motion.div variants={sectionVariants} className="text-center mb-12 md:mb-16">
         <Leaf className="h-12 w-12 text-primary mx-auto mb-3" />
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground font-heading">
           About Agrinvest Ghana
         </h1>
         <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -44,7 +42,7 @@ const AboutComponent = () => {
       {/* Our Mission & Vision Section */}
       <motion.section variants={sectionVariants} className="grid md:grid-cols-2 gap-12 items-center mb-16 md:mb-24">
         <div className="prose dark:prose-invert max-w-none">
-          <h2 className="text-3xl font-semibold text-secondary mb-4 flex items-center gap-2">
+          <h2 className="text-3xl font-semibold text-secondary mb-4 flex items-center gap-2 font-heading">
             <Target className="h-7 w-7" /> Our Mission
           </h2>
           <blockquote className="border-l-4 border-primary pl-4 py-2 my-4 bg-primary/5 text-lg italic text-primary-foreground/90 dark:bg-primary/10 dark:text-primary/95">
@@ -76,7 +74,7 @@ const AboutComponent = () => {
 
       {/* Our Reach Section */}
       <motion.section variants={sectionVariants} className="text-center mb-16 md:mb-24">
-        <h2 className="text-3xl font-semibold text-primary mb-8 flex items-center justify-center gap-2">
+        <h2 className="text-3xl font-semibold text-primary mb-8 flex items-center justify-center gap-2 font-heading">
           <MapPin className="h-7 w-7" /> Our Reach
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -87,7 +85,7 @@ const AboutComponent = () => {
 
       {/* Our Values/Impact Section */}
       <motion.section variants={sectionVariants}>
-        <h2 className="text-3xl font-semibold text-secondary mb-10 text-center flex items-center justify-center gap-2">
+        <h2 className="text-3xl font-semibold text-secondary mb-10 text-center flex items-center justify-center gap-2 font-heading">
           <CheckCircle className="h-7 w-7" /> Core Principles & Impact
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -95,7 +93,7 @@ const AboutComponent = () => {
             <Card className="h-full text-center border-primary/30 hover:border-primary transition-colors">
               <CardHeader>
                 <Users className="h-10 w-10 text-primary mx-auto mb-2" />
-                <CardTitle className="text-primary">Farmer Empowerment</CardTitle>
+                <CardTitle className="text-primary font-heading">Farmer Empowerment</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -108,7 +106,7 @@ const AboutComponent = () => {
             <Card className="h-full text-center border-secondary/30 hover:border-secondary transition-colors">
               <CardHeader>
                 <Leaf className="h-10 w-10 text-secondary mx-auto mb-2" />
-                <CardTitle className="text-secondary">Sustainability</CardTitle>
+                <CardTitle className="text-secondary font-heading">Sustainability</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -121,7 +119,7 @@ const AboutComponent = () => {
             <Card className="h-full text-center border-accent/30 hover:border-accent transition-colors">
               <CardHeader>
                 <Quote className="h-10 w-10 text-accent-foreground mx-auto mb-2" />
-                <CardTitle className="text-accent-foreground">Quality & Reliability</CardTitle>
+                <CardTitle className="text-accent-foreground font-heading">Quality & Reliability</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">

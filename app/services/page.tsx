@@ -88,7 +88,7 @@ const ServicesPage = () => {
         className="text-center mb-12 md:mb-16"
       >
         <Leaf className="h-12 w-12 text-primary mx-auto mb-3" />
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground font-heading">
           Our Services
         </h1>
         <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -102,7 +102,7 @@ const ServicesPage = () => {
             <Card className={`h-full flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:border-transparent dark:hover:shadow-lg dark:hover:shadow-${service.color.replace('text-', 'primary')}/20`}>
               <CardHeader className={`items-center text-center p-6 ${service.bgColor}`}>
                 <service.icon className={`h-12 w-12 mb-3 ${service.color}`} />
-                <CardTitle className={`text-xl ${service.color}`}>{service.title}</CardTitle>
+                <CardTitle className={`text-xl ${service.color} font-heading`}>{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow p-6 flex flex-col">
                 <CardDescription className="text-muted-foreground mb-4 flex-grow">
@@ -129,7 +129,7 @@ const ServicesPage = () => {
         transition={{ duration: 0.5, delay: services.length * 0.1 + 0.3 }} // Delay after cards animate in
         className="mt-16 md:mt-24 text-center bg-accent/50 dark:bg-accent/20 p-8 md:p-12 rounded-lg"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4 font-heading">
           Partner with Agrinvest
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto mb-6">

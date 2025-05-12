@@ -24,14 +24,14 @@ export default function Home() {
       >
         {/* Hero Background Image Placeholder */}
         <Image
-          src="/images/hero-background-placeholder.jpg" // Replace with your actual hero image path e.g. /images/ghana-farmland-wide.jpg
+          src="/images/hero-background.jpg" // Replace with your actual hero image path e.g. /images/ghana-farmland-wide.jpg
           alt="Scenic view of Ghanaian agriculture"
           layout="fill"
           objectFit="cover"
-          className="absolute inset-0 z-0 opacity-20 dark:opacity-10"
+          className="absolute inset-0 z-0 opacity-60 dark:opacity-70"
           priority // Good for LCP
         />
-        <div className="absolute inset-0 bg-black/10 z-0"></div> {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-white/30 dark:bg-black/20 z-0"></div> {/* Subtle overlay for text readability */}
 
         <div className="container mx-auto relative z-10">
           <motion.div
@@ -40,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Leaf className="h-16 w-16 text-primary mx-auto mb-4 animate-pulse" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight font-heading">
               Investing in Ghana&apos;s Agricultural Future
             </h1>
           </motion.div>
@@ -48,7 +48,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            className="text-lg md:text-xl text-foreground max-w-3xl mx-auto mb-8 font-bold"
           >
             Agrinvest empowers smallholder farmers, boosting productivity and meeting the growing demand for quality grains, cereals, and vegetables across Ghana.
           </motion.p>
@@ -75,7 +75,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-secondary"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-secondary font-heading"
           >
             How We Support Farmers
           </motion.h2>
@@ -92,7 +92,7 @@ export default function Home() {
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <ShieldCheck className="h-8 w-8 text-primary" />
                   </div>
-                  <CardTitle className="text-primary">Comprehensive Investment</CardTitle>
+                  <CardTitle className="text-primary font-heading">Comprehensive Investment</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
@@ -107,7 +107,7 @@ export default function Home() {
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <Target className="h-8 w-8 text-primary" />
                   </div>
-                  <CardTitle className="text-primary">Quality Focus</CardTitle>
+                  <CardTitle className="text-primary font-heading">Quality Focus</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
@@ -122,7 +122,7 @@ export default function Home() {
                   <div className="p-3 rounded-full bg-primary/10 mb-3">
                     <TrendingUp className="h-8 w-8 text-primary" />
                   </div>
-                  <CardTitle className="text-primary">Nationwide Reach</CardTitle>
+                  <CardTitle className="text-primary font-heading">Nationwide Reach</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
@@ -143,7 +143,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-primary"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-primary font-heading"
           >
             Our Focus Areas
           </motion.h2>
@@ -193,7 +193,7 @@ export default function Home() {
                 <Card className="h-full transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-accent/10 flex flex-col group">
                   <CardHeader className={`items-center pt-6 pb-4 ${focus.bgColor}`}>
                     <focus.icon className={`h-10 w-10 mb-3 ${focus.color} group-hover:scale-110 transition-transform duration-300 ease-in-out`} />
-                    <CardTitle className={`text-xl ${focus.color}`}>{focus.title}</CardTitle>
+                    <CardTitle className={`text-xl ${focus.color} font-heading`}>{focus.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow pt-4 text-center">
                     <p className="text-muted-foreground text-sm mb-4">
@@ -245,7 +245,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-semibold mb-4 text-foreground"
+            className="text-3xl md:text-4xl font-semibold mb-4 text-foreground font-heading"
           >
             Join Us in Growing Ghana&apos;s Agriculture
           </motion.h2>

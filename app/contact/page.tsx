@@ -58,7 +58,7 @@ const ContactPage = () => {
         className="text-center mb-12 md:mb-16"
       >
         <Mail className="h-12 w-12 text-primary mx-auto mb-3" />
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground font-heading">
           Contact Us
         </h1>
         <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ const ContactPage = () => {
         <motion.div variants={itemVariants} className="lg:col-span-3">
           <Card className="shadow-lg dark:shadow-primary/10">
             <CardHeader>
-              <CardTitle className="text-2xl text-primary flex items-center gap-2">
+              <CardTitle className="text-2xl text-primary flex items-center gap-2 font-heading">
                 <Send className="h-6 w-6" /> Send Us a Message
               </CardTitle>
               <CardDescription>
@@ -101,12 +101,12 @@ const ContactPage = () => {
                     </div>
                     <div className="space-y-1.5">
                       <label htmlFor="email" className="text-sm font-medium text-foreground/90">Email Address</label>
-                      <Input id="email" name="email" type="email" placeholder="email@gmail.com" required value={formData.email} onChange={handleChange} />
+                      <Input id="email" name="email" type="email" placeholder="johndoe@gmail.com" required value={formData.email} onChange={handleChange} />
                     </div>
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="subject" className="text-sm font-medium text-foreground/90">Subject</label>
-                    <Input id="subject" name="subject" placeholder="Inquiry about investments" required value={formData.subject} onChange={handleChange} />
+                    <Input id="subject" name="subject" placeholder="Inquiry..." required value={formData.subject} onChange={handleChange} />
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="message" className="text-sm font-medium text-foreground/90">Message</label>
@@ -134,7 +134,7 @@ const ContactPage = () => {
         <motion.div variants={itemVariants} className="lg:col-span-2">
           <Card className="shadow-lg dark:shadow-secondary/10 h-full">
             <CardHeader>
-              <CardTitle className="text-2xl text-secondary flex items-center gap-2">
+              <CardTitle className="text-2xl text-secondary flex items-center gap-2 font-heading">
                 <MapPin className="h-6 w-6" /> Get In Touch
               </CardTitle>
               <CardDescription>
@@ -186,7 +186,7 @@ const ContactPage = () => {
       <motion.div variants={itemVariants} className="mt-16 md:mt-24">
         <Card className="overflow-hidden">
           <CardHeader>
-            <CardTitle className="text-xl text-primary">Our Location</CardTitle>
+            <CardTitle className="text-xl text-primary font-heading">Our Location</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             {/* Replace the src attribute with your actual Google Maps embed link */}
