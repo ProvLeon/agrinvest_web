@@ -39,7 +39,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Leaf className="h-16 w-16 text-primary mx-auto mb-4 animate-pulse" />
+            {/* <Leaf className="h-16 w-16 text-primary mx-auto mb-4 animate-pulse" /> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight font-heading">
               Investing in Ghana&apos;s Agricultural Future
             </h1>
