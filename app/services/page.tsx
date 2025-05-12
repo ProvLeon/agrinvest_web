@@ -12,7 +12,7 @@ import Link from "next/link";
 const services = [
   {
     title: "Investment in Grain Production",
-    description: "Strategic investments in maize, rice, sorghum, and other staple grains to boost yields and ensure food security.",
+    description: "Strategic investments in maize, rice, sorghum, and other staple grains to boost yields and ensure food security",
     icon: Wheat,
     tags: ["Grains", "Food Security", "Yield Improvement"],
     color: "text-primary", // Uses primary color from globals.css
