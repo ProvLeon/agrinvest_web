@@ -2,20 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+    :root {
+        --background: 210 40% 98%;
+        /* #F8FAFC */
+        --foreground: 215 28% 17%;
+        /* #1E293B */
+
+        --card: 0 0% 100%;
+        --card-foreground: 215 28% 17%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 28% 17%;
+
+        --primary: 140 55% 60%;
+        /* #70C184 - Agrinvest Green (Refined) */
+        --primary-foreground: 150 80% 10%;
+        /* #05290D - Dark Green for text on primary */
+
+        --secondary: 198 85% 65%;
+        /* #7AC7F4 - Agrinvest Sky Blue (Refined) */
+        --secondary-foreground: 205 80% 20%;
+        /* #0A3D62 - Dark Blue for text on secondary */
+
+        --muted: 215 20% 65%;
+        /* #A1A9B8 */
+        --muted-foreground: 215 16% 47%;
+        /* #64748B */
+
+        --accent: 215 20% 90%;
+        /* #E2E8F0 */
+        --accent-foreground: 215 28% 17%;
+        /* #1E293B */
+
+        --destructive: 0 84% 60%;
+        /* #FF3B30 */
+        --destructive-foreground: 210 40% 98%;
+        /* #F8FAFC */
+
+        --border: 214.3 31.8% 91.4%;
+        /* #E2E8F0 */
+        --input: 214.3 31.8% 91.4%;
+        --ring: 198 85% 65%; /* Using refined secondary blue for ring for better visibility */
+        /* #7AC7F4 */
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 215 28% 10%;
+        /* #111827 adjusted */
+        --foreground: 210 40% 98%;
+        /* #F8FAFC */
+
+        --card: 215 28% 12%;
+        /* Slightly lighter dark */
+        --card-foreground: 210 40% 98%;
+
+        --popover: 215 28% 12%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 140 55% 68%;
+        /* #83C995 - Agrinvest Green for Dark Mode (slightly lighter) */
+        --primary-foreground: 150 80% 10%;
+        /* #05290D - Consistent dark green text for contrast */
+
+        --secondary: 198 85% 70%;
+        /* #8DCFF5 - Agrinvest Sky Blue for Dark Mode (slightly lighter) */
+        --secondary-foreground: 205 80% 15%;
+        /* #052E49 - Consistent dark blue text for contrast */
+
+        --muted: 215 20% 35%;
+        /* #475569 */
+        --muted-foreground: 215 20% 65%;
+        /* #A1A9B8 */
+
+        --accent: 215 20% 25%;
+        /* #334155 */
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 72% 51%;
+        /* #FF453A adjusted */
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 27.5%;
+        /* Darker border */
+        --input: 217.2 32.6% 27.5%;
+        --ring: 145 75% 75%;
+        /* Keep primary ring */
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+        /* Enable nice font features */
+    }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar (optional but nice) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
 }
