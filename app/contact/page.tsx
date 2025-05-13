@@ -27,8 +27,9 @@ const ContactPage = () => {
     subject: '',
     message: '',
   });
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [apiResponse, setApiResponse] = React.useState<{ message: string; success: boolean; errors?: Record<string, string[]> } | null>(null);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,13 +38,40 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Form data submitted:", formData);
-    setIsLoading(false);
-    setIsSubmitted(true);
+    setApiResponse(null); // Clear previous messages
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setApiResponse({ message: result.message || 'Message sent successfully!', success: true });
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+      } else {
+        setApiResponse({
+          message: result.message || 'An error occurred.',
+          success: false,
+          errors: result.errors,
+        });
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setApiResponse({ message: 'An unexpected network error occurred. Please try again.', success: false });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSendAnother = () => {
+    setApiResponse(null);
     setFormData({ name: '', email: '', subject: '', message: '' });
-    // You would typically send this data to a backend API
   };
 
   return (
@@ -79,7 +107,7 @@ const ContactPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {isSubmitted ? (
+              {apiResponse && apiResponse.success ? (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -87,30 +115,50 @@ const ContactPage = () => {
                 >
                   <Leaf className="h-10 w-10 text-primary mx-auto mb-3" />
                   <h3 className="text-xl font-semibold text-primary mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground">Thank you for reaching out. We&apos;ll be in touch soon.</p>
-                  <Button onClick={() => setIsSubmitted(false)} variant="outline" className="mt-4">
+                  <p className="text-muted-foreground">{apiResponse.message}</p>
+                  <Button onClick={handleSendAnother} variant="outline" className="mt-4">
                     Send Another Message
                   </Button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {apiResponse && !apiResponse.success && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-3 bg-destructive/10 rounded-md text-destructive text-sm"
+                    >
+                      <p className="font-medium">Error: {apiResponse.message}</p>
+                      {apiResponse.errors && (
+                        <ul className="list-disc list-inside mt-1">
+                          {Object.entries(apiResponse.errors).map(([field, messages]) =>
+                            messages?.map((msg, i) => <li key={`${field}-${i}`}>{msg}</li>)
+                          )}
+                        </ul>
+                      )}
+                    </motion.div>
+                  )}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-1.5">
                       <label htmlFor="name" className="text-sm font-medium text-foreground/90">Full Name</label>
-                      <Input id="name" name="name" placeholder="John Doe" required value={formData.name} onChange={handleChange} />
+                      <Input id="name" name="name" placeholder="Kofi Peprah" required value={formData.name} onChange={handleChange} disabled={isLoading} />
+                      {apiResponse?.errors?.name && <p className="text-xs text-destructive">{apiResponse.errors.name.join(', ')}</p>}
                     </div>
                     <div className="space-y-1.5">
                       <label htmlFor="email" className="text-sm font-medium text-foreground/90">Email Address</label>
-                      <Input id="email" name="email" type="email" placeholder="johndoe@gmail.com" required value={formData.email} onChange={handleChange} />
+                      <Input id="email" name="email" type="email" placeholder="kofipeprah@gmail.com" required value={formData.email} onChange={handleChange} disabled={isLoading} />
+                      {apiResponse?.errors?.email && <p className="text-xs text-destructive">{apiResponse.errors.email.join(', ')}</p>}
                     </div>
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="subject" className="text-sm font-medium text-foreground/90">Subject</label>
-                    <Input id="subject" name="subject" placeholder="Inquiry..." required value={formData.subject} onChange={handleChange} />
+                    <Input id="subject" name="subject" placeholder="Inquiry..." required value={formData.subject} onChange={handleChange} disabled={isLoading} />
+                    {apiResponse?.errors?.subject && <p className="text-xs text-destructive">{apiResponse.errors.subject.join(', ')}</p>}
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="message" className="text-sm font-medium text-foreground/90">Message</label>
-                    <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required value={formData.message} onChange={handleChange} />
+                    <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required value={formData.message} onChange={handleChange} disabled={isLoading} />
+                    {apiResponse?.errors?.message && <p className="text-xs text-destructive">{apiResponse.errors.message.join(', ')}</p>}
                   </div>
                   <div>
                     <Button type="submit" className="w-full sm:w-auto bg-agrinvest-green text-agrinvest-green-foreground hover:bg-agrinvest-green/90" disabled={isLoading}>

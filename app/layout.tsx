@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${lexend.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${lexend.variable} font-sans antialiased flex flex-col min-h-screen`}
       >
         <AppShell>{children}</AppShell>
       </body>

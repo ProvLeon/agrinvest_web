@@ -28,10 +28,10 @@ export default function Home() {
           alt="Scenic view of Ghanaian agriculture"
           layout="fill"
           objectFit="cover"
-          className="absolute inset-0 z-0 opacity-60 dark:opacity-70"
+          className="absolute inset-0 z-0 opacity-80 dark:opacity-70"
           priority // Good for LCP
         />
-        <div className="absolute inset-0 bg-white/30 dark:bg-black/20 z-0"></div> {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90  dark:from-gray-900/90 z-0"></div> {/* Subtle overlay for text readability */}
 
         <div className="container mx-auto relative z-10">
           <motion.div
@@ -40,7 +40,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* <Leaf className="h-16 w-16 text-primary mx-auto mb-4 animate-pulse" /> */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight font-heading mix-blend-multiply dark:mix-blend-screen">
               Investing in Ghana&apos;s Agricultural Future
             </h1>
           </motion.div>
