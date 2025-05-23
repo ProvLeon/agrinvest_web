@@ -180,10 +180,11 @@ const ContactPage = () => {
 
         {/* Contact Details */}
         <motion.div variants={itemVariants} className="lg:col-span-2">
-          <Card className="shadow-lg dark:shadow-secondary/10 h-full">
+          <Card className="shadow-lg dark:shadow-primary/10 h-full">
             <CardHeader>
-              <CardTitle className="text-2xl text-secondary flex items-center gap-2 font-heading">
-                <MapPin className="h-6 w-6" /> Get In Touch
+              <CardTitle className="text-2xl text-primary flex items-center gap-2 font-heading">
+                {/* <MapPin className="h-6 w-6" />  */}
+                Get In Touch
               </CardTitle>
               <CardDescription>
                 Find us at our office or reach out via phone or email.
@@ -191,7 +192,7 @@ const ContactPage = () => {
             </CardHeader>
             <CardContent className="space-y-6 text-foreground/90">
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 mt-1 text-secondary flex-shrink-0" />
+                <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold">Our Office</h4>
                   <p className="text-muted-foreground">
@@ -203,7 +204,7 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 mt-1 text-secondary flex-shrink-0" />
+                <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold">Phone</h4>
                   <a href={`tel:+${CONTACT}`} className="text-muted-foreground hover:text-secondary transition-colors">
@@ -212,7 +213,7 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 mt-1 text-secondary flex-shrink-0" />
+                <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold">Email</h4>
                   <a href={`mailto:${EMAIL}`} className="text-muted-foreground hover:text-secondary transition-colors">

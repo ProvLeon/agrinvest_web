@@ -79,13 +79,13 @@ const Header = () => {
             <div className="h-9 w-9 bg-muted/50 rounded-md animate-pulse"></div>
             <div className="h-9 w-9 bg-muted/50 rounded-md animate-pulse"></div>
           </div>
-           <div className="hidden md:flex items-center gap-2">
-             <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
-             <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
-             <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
-             <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
-             <div className="h-9 w-9 bg-muted/50 rounded-md animate-pulse ml-2"></div>
-           </div>
+          <div className="hidden md:flex items-center gap-2">
+            <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
+            <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
+            <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
+            <div className="h-9 w-20 bg-muted/50 rounded-md animate-pulse"></div>
+            <div className="h-9 w-9 bg-muted/50 rounded-md animate-pulse ml-2"></div>
+          </div>
         </div>
       </header>
     );
@@ -125,7 +125,7 @@ const Header = () => {
                         active={isActive}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "!bg-transparent focus:!bg-accent/50", 
+                          "!bg-transparent focus:!bg-accent/50",
                           isActive
                             ? "font-semibold text-primary"
                             : "text-foreground/70 hover:text-primary",

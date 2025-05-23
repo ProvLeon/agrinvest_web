@@ -42,8 +42,9 @@ const AboutComponent = () => {
       {/* Our Mission & Vision Section */}
       <motion.section variants={sectionVariants} className="grid md:grid-cols-2 gap-12 items-center mb-16 md:mb-24">
         <div className="prose dark:prose-invert max-w-none">
-          <h2 className="text-3xl font-semibold text-secondary mb-4 flex items-center gap-2 font-heading">
-            <Target className="h-7 w-7" /> Our Mission
+          <h2 className="text-3xl font-semibold text-primary mb-4 flex items-center gap-2 font-heading">
+            {/* <Target className="h-7 w-7" />  */}
+            Our Mission
           </h2>
           <blockquote className="border-l-4 border-primary pl-4 py-2 my-4 bg-primary/5 text-lg italic text-primary-foreground/90 dark:bg-primary/10 dark:text-primary/95">
             To meet Ghana&apos;s increasing demand for high quality grains, cereals, and vegetables through a comprehensive set of investments in the smallholder farmer.
@@ -60,14 +61,14 @@ const AboutComponent = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
             <Image
               // Replace with a relevant, high-quality image
-              src="/placeholder-ghana-farm.jpg" // Make sure you have a placeholder or real image
+              src="/images/ghana-farm.jpg" // Make sure you have a placeholder or real image
               alt="Ghanaian Farmland Visualization"
               layout="fill"
               objectFit="cover"
               className="opacity-80"
             />
             <span className="absolute inset-0 bg-black/10"></span> {/* Subtle overlay */}
-            <p className="text-background font-semibold z-10 bg-black/30 px-4 py-2 rounded">Vibrant Ghanaian Agriculture</p>
+            <p className="text-white font-semibold z-10 bg-black/30 px-4 py-2 rounded">Vibrant Ghanaian Agriculture</p>
           </div>
         </motion.div>
       </motion.section>
@@ -75,7 +76,8 @@ const AboutComponent = () => {
       {/* Our Reach Section */}
       <motion.section variants={sectionVariants} className="text-center mb-16 md:mb-24">
         <h2 className="text-3xl font-semibold text-primary mb-8 flex items-center justify-center gap-2 font-heading">
-          <MapPin className="h-7 w-7" /> Our Reach
+          {/* <MapPin className="h-7 w-7" /> */}
+          Our Reach
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Agrinvest Ghana proudly operates across <strong className="text-foreground">10 districts</strong> within nearly <strong className="text-foreground">8 regions</strong> of the country. This widespread presence allows us to understand diverse agricultural needs and make a tangible impact nationwide.

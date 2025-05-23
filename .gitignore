@@ -40,3 +40,5 @@ yarn-error.log*
 next-env.d.ts
 *_.DS_Store
 *_hero*
+*._*.jpg
+*._*.heic
