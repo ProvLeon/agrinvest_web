@@ -15,10 +15,10 @@ import {
   BookOpen,
   Lightbulb,
   Users,
-  TrendingUp,
+  // TrendingUp,
   Shield,
   ArrowRight,
-  Target,
+  // Target,
   CheckCircle2,
   Play,
   Star,
@@ -119,12 +119,12 @@ const services = [
   }
 ];
 
-const stats = [
-  { icon: Users, value: "3,500+", label: "Farmers Empowered", color: "text-agrinvest-green" },
-  { icon: TrendingUp, value: "47%", label: "Average Yield Increase", color: "text-agrinvest-blue" },
-  { icon: Target, value: "12", label: "Districts Covered", color: "text-amber-600" },
-  { icon: Award, value: "8", label: "Regions Active", color: "text-teal-600" }
-];
+// const stats = [
+//   { icon: Users, value: "3,500+", label: "Farmers Empowered", color: "text-agrinvest-green" },
+//   { icon: TrendingUp, value: "47%", label: "Average Yield Increase", color: "text-agrinvest-blue" },
+//   { icon: Target, value: "12", label: "Districts Covered", color: "text-amber-600" },
+//   { icon: Award, value: "8", label: "Regions Active", color: "text-teal-600" }
+// ];
 
 const achievements = [
   { icon: Star, title: "Excellence Award", desc: "Best Agricultural Innovation 2024" },

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Leaf, MapPin, Users, Quote, Target, CheckCircle } from 'lucide-react';
+import { Leaf, Users, Quote, CheckCircle } from 'lucide-react';
 
 
 const AboutComponent = () => {
