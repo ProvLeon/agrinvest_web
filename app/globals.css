@@ -4,92 +4,114 @@
 
 @layer base {
     :root {
-        --background: 210 40% 98%;
-        /* #F8FAFC */
-        --foreground: 215 28% 17%;
-        /* #1E293B */
+        --background: 0 0% 100%;
+        /* Pure white for clean, professional look */
+        --foreground: 220 13% 18%;
+        /* #2D3748 - Professional dark gray */
 
         --card: 0 0% 100%;
-        --card-foreground: 215 28% 17%;
+        --card-foreground: 220 13% 18%;
 
         --popover: 0 0% 100%;
-        --popover-foreground: 215 28% 17%;
+        --popover-foreground: 220 13% 18%;
 
-        --primary: 140 55% 60%;
-        /* #70C184 - Agrinvest Green (Refined) */
-        --primary-foreground: 150 80% 10%;
-        /* #05290D - Dark Green for text on primary */
+        --primary: 94 49% 51%;
+        /* #81c141 - Agrinvest Green (Exact brand color) */
+        --primary-foreground: 0 0% 100%;
+        /* Pure white for contrast */
 
-        --secondary: 198 85% 65%;
-        /* #7AC7F4 - Agrinvest Sky Blue (Refined) */
-        --secondary-foreground: 205 80% 20%;
-        /* #0A3D62 - Dark Blue for text on secondary */
+        --secondary: 193 100% 26%;
+        /* #006683 - Agrinvest Blue (Exact brand color) */
+        --secondary-foreground: 0 0% 100%;
+        /* Pure white for contrast */
 
-        --muted: 215 20% 65%;
-        /* #A1A9B8 */
-        --muted-foreground: 215 16% 47%;
-        /* #64748B */
+        --muted: 220 14% 96%;
+        /* #F7FAFC - Very light gray */
+        --muted-foreground: 220 9% 46%;
+        /* #718096 - Medium gray */
 
-        --accent: 215 20% 90%;
-        /* #E2E8F0 */
-        --accent-foreground: 215 28% 17%;
-        /* #1E293B */
+        --accent: 220 14% 96%;
+        /* #F7FAFC */
+        --accent-foreground: 220 13% 18%;
 
         --destructive: 0 84% 60%;
-        /* #FF3B30 */
-        --destructive-foreground: 210 40% 98%;
-        /* #F8FAFC */
+        /* #EF4444 - Red for errors */
+        --destructive-foreground: 0 0% 100%;
 
-        --border: 214.3 31.8% 91.4%;
-        /* #E2E8F0 */
-        --input: 214.3 31.8% 91.4%;
-        --ring: 198 85% 65%; /* Using refined secondary blue for ring for better visibility */
-        /* #7AC7F4 */
+        --border: 220 13% 91%;
+        /* #E2E8F0 - Light border */
+        --input: 220 13% 91%;
+        --ring: 94 49% 51%;
+        /* Use primary green for focus rings */
 
-        --radius: 0.5rem;
+        --radius: 0.875rem;
+        /* More refined radius for premium feel */
+
+        /* Brand-specific color variables (exact hex values) */
+        --agrinvest-green: 129 193 65;
+        /* #81c141 */
+        --agrinvest-blue: 0 102 131;
+        /* #006683 */
+        --agrinvest-gray: 88 89 91;
+        /* #58595b */
     }
 
     .dark {
-        --background: 215 28% 10%;
-        /* #111827 adjusted */
-        --foreground: 210 40% 98%;
-        /* #F8FAFC */
+        --background: 224 71% 4%;
+        /* #0F172A - Very dark blue-gray */
+        --foreground: 213 31% 91%;
+        /* #F1F5F9 - Light gray */
 
-        --card: 215 28% 12%;
-        /* Slightly lighter dark */
-        --card-foreground: 210 40% 98%;
+        --card: 224 71% 4%;
+        --card-foreground: 213 31% 91%;
 
-        --popover: 215 28% 12%;
-        --popover-foreground: 210 40% 98%;
+        --popover: 224 71% 4%;
+        --popover-foreground: 213 31% 91%;
 
-        --primary: 140 55% 68%;
-        /* #83C995 - Agrinvest Green for Dark Mode (slightly lighter) */
-        --primary-foreground: 150 80% 10%;
-        /* #05290D - Consistent dark green text for contrast */
+        --primary: 94 49% 55%;
+        /* Slightly lighter green for dark mode */
+        --primary-foreground: 224 71% 4%;
 
-        --secondary: 198 85% 70%;
-        /* #8DCFF5 - Agrinvest Sky Blue for Dark Mode (slightly lighter) */
-        --secondary-foreground: 205 80% 15%;
-        /* #052E49 - Consistent dark blue text for contrast */
+        --secondary: 193 100% 35%;
+        /* Slightly lighter blue for dark mode */
+        --secondary-foreground: 213 31% 91%;
 
-        --muted: 215 20% 35%;
-        /* #475569 */
-        --muted-foreground: 215 20% 65%;
-        /* #A1A9B8 */
+        --muted: 215 28% 17%;
+        /* #1E293B */
+        --muted-foreground: 217 11% 65%;
+        /* #94A3B8 */
 
-        --accent: 215 20% 25%;
-        /* #334155 */
-        --accent-foreground: 210 40% 98%;
+        --accent: 215 28% 17%;
+        --accent-foreground: 213 31% 91%;
 
-        --destructive: 0 72% 51%;
-        /* #FF453A adjusted */
-        --destructive-foreground: 210 40% 98%;
+        --destructive: 0 63% 31%;
+        /* Darker red for dark mode */
+        --destructive-foreground: 213 31% 91%;
 
-        --border: 217.2 32.6% 27.5%;
-        /* Darker border */
-        --input: 217.2 32.6% 27.5%;
-        --ring: 145 75% 75%;
-        /* Keep primary ring */
+        --border: 215 28% 17%;
+        --input: 215 28% 17%;
+        --ring: 94 49% 55%;
+
+        /* Brand colors for dark mode */
+        --agrinvest-green: 129 193 65;
+        /* Keep same for consistency */
+        --agrinvest-blue: 0 102 131;
+        /* Keep same for consistency */
+        --agrinvest-gray: 88 89 91;
+        /* Keep same for consistency */
+    }
+
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
     }
 }
 
@@ -101,25 +123,274 @@
     body {
         @apply bg-background text-foreground;
         font-feature-settings: "rlig" 1, "calt" 1;
-        /* Enable nice font features */
+        /* Enable ligatures and contextual alternates */
+        font-optical-sizing: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+    }
+
+    /* Smooth focus transitions */
+    *:focus-visible {
+        outline: 2px solid hsl(var(--ring));
+        outline-offset: 2px;
+        border-radius: calc(var(--radius) - 2px);
     }
 }
 
-/* Custom scrollbar (optional but nice) */
+/* Enhanced scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-muted/20;
+    @apply bg-muted/10;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-accent rounded-lg;
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
+    background: linear-gradient(180deg, hsl(var(--primary)/0.8) 0%, hsl(var(--secondary)/0.8) 100%);
+    background-clip: content-box;
+}
+
+/* Professional animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Utility classes for professional effects */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+/* Professional gradient backgrounds */
+.bg-gradient-brand {
+    background: linear-gradient(135deg, rgb(var(--agrinvest-green)) 0%, rgb(var(--agrinvest-blue)) 100%);
+}
+
+.bg-gradient-brand-soft {
+    background: linear-gradient(135deg, rgba(var(--agrinvest-green), 0.1) 0%, rgba(var(--agrinvest-blue), 0.1) 100%);
+}
+
+.bg-gradient-brand-vertical {
+    background: linear-gradient(180deg, rgb(var(--agrinvest-green)) 0%, rgb(var(--agrinvest-blue)) 100%);
+}
+
+.bg-gradient-brand-radial {
+    background: radial-gradient(circle at center, rgba(var(--agrinvest-green), 0.15) 0%, rgba(var(--agrinvest-blue), 0.05) 100%);
+}
+
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Professional shadows */
+.shadow-brand {
+    box-shadow: 0 8px 35px -5px rgba(var(--agrinvest-green), 0.25), 0 4px 15px -3px rgba(var(--agrinvest-green), 0.1);
+}
+
+.shadow-brand-blue {
+    box-shadow: 0 8px 35px -5px rgba(var(--agrinvest-blue), 0.25), 0 4px 15px -3px rgba(var(--agrinvest-blue), 0.1);
+}
+
+.shadow-soft {
+    box-shadow: 0 4px 20px -3px rgba(0, 0, 0, 0.08), 0 12px 25px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-medium {
+    box-shadow: 0 8px 30px -5px rgba(0, 0, 0, 0.12), 0 20px 35px -7px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-large {
+    box-shadow: 0 15px 50px -8px rgba(0, 0, 0, 0.15), 0 25px 60px -10px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-premium {
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 16px 56px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Professional text effects */
+.text-gradient-brand {
+    background: linear-gradient(135deg, #81c141 0%, #006683 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Professional text effects */
+.text-gradient-brand {
+    background: linear-gradient(135deg, #81c141 0%, #006683 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced selection */
+::selection {
+    background: rgba(var(--agrinvest-green), 0.25);
+    color: hsl(var(--foreground));
+}
+
+::-moz-selection {
+    background: rgba(var(--agrinvest-green), 0.25);
+    color: hsl(var(--foreground));
+}
+
+/* Professional focus states */
+.focus-brand:focus-visible {
+    outline: 2px solid rgb(var(--agrinvest-green));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(var(--agrinvest-green), 0.15);
+}
+
+/* Premium animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(var(--agrinvest-green), 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(var(--agrinvest-green), 0.4);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--agrinvest-green), 0.1) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Premium hover effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
 }

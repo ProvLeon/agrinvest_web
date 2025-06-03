@@ -66,7 +66,7 @@ const ContactFormEmail = ({
         <Body className="bg-background font-sans text-foreground">
           <Container className="mx-auto my-[40px] w-[600px] rounded-lg border border-solid border-[#eaeaea] bg-card p-[20px] shadow-sm">
             <Section className="bg-primary rounded-t-lg py-4 px-6 -m-[20px] mb-0">
-              <Img src="https://i.ibb.co/HXF8RJj/agrinvest-logo.png" width="150" height="40" alt="Agrinvest Logo" className="mx-auto" />
+              <Img src="https://investinagric.com/agrinvest_logo.png" width="150" height="40" alt="Agrinvest Limited - Licensed Agribusiness Enterprise" className="mx-auto" />
             </Section>
 
             <Section className="mt-[32px] text-center">
@@ -77,7 +77,7 @@ const ContactFormEmail = ({
 
             <Section className="px-[25px]">
               <Text className="text-[15px] leading-[24px] text-foreground font-medium">
-                You have received a new message through the Agrinvest Ghana contact form.
+                You have received a new message through the Agrinvest Limited contact form from a potential partner.
               </Text>
               <Hr className="mx-0 my-[26px] w-full border border-solid border-[#eaeaea]" />
 
@@ -118,7 +118,7 @@ const ContactFormEmail = ({
                   <strong>Actions:</strong>
                 </Text>
                 <Text className="text-[14px] leading-[22px] text-foreground/90 m-0">
-                  Please respond to this inquiry by replying directly to {name} at{" "}
+                  Please respond to this partnership inquiry by replying directly to {name} at{" "}
                   <Link href={`mailto:${email}`} className="text-secondary underline font-medium">
                     {email}
                   </Link>
@@ -127,20 +127,24 @@ const ContactFormEmail = ({
             </Section>
 
             <Section className="bg-gray-50 rounded-b-lg py-6 px-6 -m-[20px] mt-8 text-center">
-              <Img src="https://i.ibb.co/HXF8RJj/agrinvest-logo.png" width="120" height="30" alt="Agrinvest Logo" className="mx-auto mb-4" />
+              <Img src="https://investinagric.com/agrinvest_logo.png" width="120" height="30" alt="Agrinvest Limited Logo" className="mx-auto mb-4" />
 
               <Text className="text-[13px] leading-[20px] text-foreground/70 mb-2">
-                This message was sent from the contact form on the Agrinvest Ghana website.
+                This message was sent from the contact form on the Agrinvest Limited website.
               </Text>
 
               <Text className="text-[13px] leading-[20px] text-foreground/70">
-                Accra, Ghana • <Link href="https://investinagric.com" className="text-secondary">investinagric.com</Link>
+                Ejisu-Abankro, Ghana • <Link href="https://investinagric.com" className="text-secondary">investinagric.com</Link>
+              </Text>
+
+              <Text className="text-[13px] leading-[20px] text-foreground/70 mt-2">
+                Licensed Agribusiness Enterprise • USAID, IFAD & AfDB Partner
               </Text>
 
               <Hr className="mx-auto my-4 w-16 border border-solid border-[#eaeaea]" />
 
               <Text className="text-[12px] text-muted">
-                © {new Date().getFullYear()} Agrinvest Ghana. All rights reserved.
+                © {new Date().getFullYear()} Agrinvest Limited. All rights reserved.
               </Text>
             </Section>
           </Container>

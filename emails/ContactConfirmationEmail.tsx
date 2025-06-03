@@ -27,7 +27,7 @@ const ContactConfirmationEmail = ({
   name,
   subject,
   contactPageUrl,
-  companyName = "Agrinvest Ghana",
+  companyName = "Agrinvest Limited",
   companyEmail = "info@investinagric.com", // Fallback, ideally from env
 }: ContactConfirmationEmailProps) => {
   const previewText = `Thank you for contacting ${companyName}`;
@@ -71,7 +71,7 @@ const ContactConfirmationEmail = ({
           <Container className="mx-auto my-[40px] w-[600px] rounded-lg border border-solid border-border bg-card p-[20px] shadow-sm">
             {/* Header with logo */}
             <Section className="bg-primary rounded-t-lg py-4 px-6 -m-[20px] mb-0">
-              <Img src="https://i.ibb.co/HXF8RJj/agrinvest-logo.png" width="150" height="40" alt={`${companyName} Logo`} className="mx-auto" />
+              <Img src="https://investinagric.com/agrinvest_logo.png" width="150" height="40" alt={`${companyName} - Licensed Agribusiness Enterprise`} className="mx-auto" />
             </Section>
 
             <Section className="mt-[32px] text-center">
@@ -85,15 +85,15 @@ const ContactConfirmationEmail = ({
                 Dear {name},
               </Text>
               <Text className="text-[15px] leading-[24px] text-foreground/90">
-                Thank you for reaching out to {companyName}. We have successfully
-                received your message regarding:
+                Thank you for reaching out to {companyName}, Ghana&apos;s leading licensed agribusiness enterprise. 
+                We have successfully received your partnership inquiry regarding:
               </Text>
               <Text className="my-5 rounded-md bg-primary/10 p-4 text-center text-[16px] font-medium italic text-primary border-l-4 border-primary">
                 &quot;{subject}&quot;
               </Text>
               <Text className="text-[15px] leading-[24px] text-foreground/90">
-                Our team will review your inquiry and get back to you as soon
-                as possible. We appreciate your interest in {companyName}.
+                Our professional team will review your inquiry and get back to you within 24-48 hours
+                with a comprehensive response. We appreciate your interest in partnering with {companyName}.
               </Text>
 
               <Hr className="mx-0 my-[30px] w-full border border-solid border-border" />
@@ -103,13 +103,13 @@ const ContactConfirmationEmail = ({
                   <strong>What happens next?</strong>
                 </Text>
                 <Text className="text-[14px] leading-[22px] text-foreground/90 m-0 mb-2">
-                  • Our team will review your message within 24-48 hours
+                  • Our professional team will review your message within 24-48 hours
                 </Text>
                 <Text className="text-[14px] leading-[22px] text-foreground/90 m-0 mb-2">
-                  • You&apos;ll receive a personalized response from one of our specialists
+                  • You&apos;ll receive a personalized response from one of our agricultural specialists
                 </Text>
                 <Text className="text-[14px] leading-[22px] text-foreground/90 m-0">
-                  • We may request additional information if needed
+                  • We may schedule a consultation to discuss partnership opportunities
                 </Text>
               </Section>
 
@@ -134,7 +134,7 @@ const ContactConfirmationEmail = ({
             <Hr className="mx-[25px] my-[20px] w-auto border border-solid border-border" />
 
             <Section className="bg-gray-50 rounded-b-lg py-6 px-6 -m-[20px] mt-0 text-center">
-              <Img src="https://i.ibb.co/HXF8RJj/agrinvest-logo.png" width="120" height="30" alt={`${companyName} Logo`} className="mx-auto mb-4" />
+              <Img src="https://investinagric.com/agrinvest_logo.png" width="120" height="30" alt={`${companyName} Logo`} className="mx-auto mb-4" />
 
               <Text className="text-[13px] leading-[20px] text-foreground/70 mb-2">
                 Have questions? Contact us at{" "}
@@ -144,7 +144,11 @@ const ContactConfirmationEmail = ({
               </Text>
 
               <Text className="text-[13px] leading-[20px] text-foreground/70">
-                Accra, Ghana • <Link href="https://investinagric.com" className="text-secondary">investinagric.com</Link>
+                Ejisu-Abankro, Ghana • <Link href="https://investinagric.com" className="text-secondary">investinagric.com</Link>
+              </Text>
+
+              <Text className="text-[13px] leading-[20px] text-foreground/70 mt-2">
+                Licensed Agribusiness Enterprise • USAID, IFAD & AfDB Partner
               </Text>
 
               <Hr className="mx-auto my-4 w-16 border border-solid border-border" />

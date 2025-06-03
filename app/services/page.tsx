@@ -4,357 +4,321 @@ import React from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Leaf,
   Wheat,
-  Sprout,
   Tractor,
   BookOpen,
-  Lightbulb,
   Users,
-  // TrendingUp,
-  Shield,
   ArrowRight,
-  // Target,
   CheckCircle2,
-  Play,
   Star,
   Award,
-  Globe
+  Globe,
+  TrendingUp,
 } from 'lucide-react';
 
 const services = [
   {
-    id: "grain-production",
-    title: "Grain Production Excellence",
-    subtitle: "Strategic Staple Crop Investment",
-    description: "Revolutionizing maize, rice, and sorghum cultivation through cutting-edge agricultural technology and sustainable farming practices.",
-    fullDescription: "Our comprehensive grain production program combines precision agriculture, quality inputs, and market intelligence to deliver exceptional yields and profitability for smallholder farmers.",
+    id: "inputs",
+    title: "High-Quality Agricultural Inputs",
+    subtitle: "Premium Seeds & Organic Fertilizers",
+    description: "Provision of improved seeds and organic fertilizers ensuring optimal crop growth for all seven key focus crops across Ghana's agricultural regions.",
+    fullDescription: "We supply carefully selected, high-quality improved seeds and organic fertilizers specifically chosen to maximize yield potential for our key crops: Maize, Soybeans, Cowpeas, Groundnuts, Pineapples, Cassava, and Rice. Our inputs are tailored to Ghana's soil conditions and climate.",
     icon: Wheat,
-    image: "/images/grain-production.jpg",
-    features: ["Premium seed varieties", "Precision fertilizer application", "Smart irrigation systems", "Harvest optimization"],
-    metrics: { increase: "45%", unit: "yield boost" },
-    color: "agrinvest-green",
-    category: "Core Production",
-    testimonial: "Agrinvest transformed our maize yields beyond expectations",
-    client: "Kwame Asante, Lead Farmer"
-  },
-  {
-    id: "horticulture",
-    title: "Premium Horticulture",
-    subtitle: "High-Value Crop Cultivation",
-    description: "Elevating vegetable and fruit production through greenhouse technology, organic methods, and export-quality standards.",
-    fullDescription: "From farm to table, we support premium produce cultivation that meets international standards while maximizing farmer income through strategic market positioning.",
-    icon: Sprout,
-    image: "/images/vegetable-farming.jpg",
-    features: ["Climate-controlled greenhouses", "Organic certification support", "Post-harvest technology", "Export market access"],
-    metrics: { increase: "60%", unit: "market value" },
-    color: "amber-600",
-    category: "Specialty Crops",
-    testimonial: "Our vegetables now reach international markets with premium pricing",
-    client: "Ama Mensah, Horticulture Farmer"
+    image: "/images/agricultural-inputs.jpg",
+    features: [
+      "Improved seed varieties for 7 key crops",
+      "Organic fertilizer formulations",
+      "Quality assurance testing",
+      "Farmer-specific recommendations",
+      "Timely delivery across all 7 regions: Ashanti, Upper West, Northern, Bono East, Bono, North East, Savannah"
+    ],
+    metrics: { value: "7", unit: "Key Crop Varieties Supported" },
+    color: "agrinvest-green-600",
+    category: "Input Supply",
+    benefits: [
+      "Higher germination rates",
+      "Improved crop resilience",
+      "Enhanced soil health",
+      "Sustainable farming practices"
+    ]
   },
   {
     id: "mechanization",
-    title: "Smart Mechanization",
-    subtitle: "Advanced Agricultural Technology",
-    description: "Implementing state-of-the-art farming equipment and IoT solutions to maximize efficiency and productivity.",
-    fullDescription: "Our mechanization program provides access to modern tractors, precision planters, and smart farming tools that reduce labor costs while increasing agricultural output.",
+    title: "Complete Mechanization Services",
+    subtitle: "End-to-End Agricultural Machinery",
+    description: "Full mechanized solutions including land preparation, ploughing, precision planting, spraying, threshing, and modern transportation across Ghana.",
+    fullDescription: "Our comprehensive mechanization program covers every stage of the agricultural cycle, from initial land preparation through post-harvest handling, utilizing modern equipment and logistics systems designed for Ghana's agricultural landscape.",
     icon: Tractor,
-    image: "/images/farm-equipment.jpg",
-    features: ["GPS-guided tractors", "Drone monitoring", "Automated irrigation", "Equipment training programs"],
-    metrics: { increase: "50%", unit: "efficiency gain" },
-    color: "teal-600",
-    category: "Technology",
-    testimonial: "Modern equipment has revolutionized our farming operations",
-    client: "Joseph Osei, Commercial Farmer"
+    image: "/images/tractor.jpg",
+    features: [
+      "Land preparation and ploughing",
+      "Mechanized precision planting",
+      "Efficient crop protection spraying",
+      "Professional threshing services",
+      "Modern logistics transportation"
+    ],
+    metrics: { value: "5", unit: "Core Mechanization Services" },
+    color: "agrinvest-green-600",
+    category: "Mechanization",
+    benefits: [
+      "Reduced labor costs",
+      "Improved efficiency",
+      "Higher crop quality",
+      "Minimized post-harvest losses"
+    ]
   },
   {
-    id: "market-access",
-    title: "Global Market Access",
-    subtitle: "Strategic Market Positioning",
-    description: "Connecting farmers to premium markets through strategic partnerships and value chain optimization.",
-    fullDescription: "We build bridges between farmers and high-value markets, ensuring fair pricing, reliable demand, and sustainable income growth through strategic market positioning.",
-    icon: Globe,
-    image: "/images/market-access.jpg",
-    features: ["Direct buyer connections", "Price optimization", "Quality certification", "Logistics coordination"],
-    metrics: { increase: "35%", unit: "income boost" },
-    color: "agrinvest-green",
-    category: "Market Development",
-    testimonial: "Access to premium markets doubled our farming income",
-    client: "Grace Owusu, Vegetable Farmer"
-  },
-  {
-    id: "farmer-training",
-    title: "Expert Development",
-    subtitle: "Comprehensive Farmer Education",
-    description: "Empowering farmers with cutting-edge knowledge, digital literacy, and sustainable farming practices.",
-    fullDescription: "Our education programs combine traditional wisdom with modern agricultural science, creating confident, skilled farmers ready for tomorrow's challenges.",
+    id: "training",
+    title: "Capacity Building Programs",
+    subtitle: "Modern Agronomic Training",
+    description: "Comprehensive training programs equipping farmers with modern agronomic practices, particularly focusing on women and youth empowerment.",
+    fullDescription: "Our capacity building initiatives focus on knowledge transfer, skill development, and best practice implementation to empower farmers with cutting-edge agricultural techniques. We prioritize women and youth, providing them with tools and resources to thrive in Ghana's agricultural sector.",
     icon: BookOpen,
-    image: "/images/farmer-training.jpg",
-    features: ["Hands-on workshops", "Digital farming tools", "Financial literacy", "Sustainability training"],
-    metrics: { increase: "500+", unit: "farmers trained" },
-    color: "amber-600",
-    category: "Education",
-    testimonial: "The training program completely transformed my farming approach",
-    client: "Samuel Adjei, Progressive Farmer"
-  },
-  {
-    id: "advisory",
-    title: "Strategic Advisory",
-    subtitle: "Expert Agricultural Consultation",
-    description: "Providing world-class agricultural expertise and innovative solutions for complex farming challenges.",
-    fullDescription: "Our team of agricultural experts delivers personalized consultation services, helping farmers navigate challenges and capitalize on opportunities with data-driven insights.",
-    icon: Lightbulb,
-    image: "/images/agricultural-advisory.jpg",
-    features: ["Soil analysis & testing", "Crop health monitoring", "Pest & disease management", "Sustainability planning"],
-    metrics: { increase: "24/7", unit: "expert support" },
-    color: "teal-600",
-    category: "Consultation",
-    testimonial: "Expert guidance helped us overcome every farming challenge",
-    client: "Rebecca Ofori, Innovation Farmer"
+    image: "/images/women1.jpeg",
+    features: [
+      "Modern agronomic practices training",
+      "Sustainable farming techniques",
+      "Market access education",
+      "Financial literacy programs",
+      "Women and youth empowerment programs"
+    ],
+    metrics: { value: "7,487", unit: "Farmers Trained" },
+    color: "agrinvest-green-600",
+    category: "Capacity Building",
+    benefits: [
+      "Enhanced farming knowledge",
+      "Improved crop management",
+      "Better market positioning",
+      "Increased farm income"
+    ]
   }
 ];
 
-// const stats = [
-//   { icon: Users, value: "3,500+", label: "Farmers Empowered", color: "text-agrinvest-green" },
-//   { icon: TrendingUp, value: "47%", label: "Average Yield Increase", color: "text-agrinvest-blue" },
-//   { icon: Target, value: "12", label: "Districts Covered", color: "text-amber-600" },
-//   { icon: Award, value: "8", label: "Regions Active", color: "text-teal-600" }
-// ];
-
 const achievements = [
-  { icon: Star, title: "Excellence Award", desc: "Best Agricultural Innovation 2024" },
-  { icon: Shield, title: "Certified Partner", desc: "Ministry of Agriculture Ghana" },
-  { icon: Award, title: "Impact Recognition", desc: "UN Sustainable Development Goals" }
+  { icon: Users, value: "7,487", label: "Farmers Served", color: "text-agrinvest-green-600" },
+  { icon: Globe, value: "7", label: "Regions Covered", color: "text-agrinvest-green-600" },
+  { icon: Wheat, value: "7", label: "Key Crop Varieties", color: "text-agrinvest-green-600" },
+  { icon: Award, value: "4", label: "Strategic Partners", color: "text-agrinvest-green-600" }
 ];
 
 const ServicesPage = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    },
+  };
+
+
+
+  const staggerContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } }
+  };
+
   return (
-    <>
-      {/* Hero Section with Parallax Effect */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="min-h-screen"
+    >
+      {/* Hero Section */}
+      <section className="relative py-24 md:py-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-background.jpg"
-            alt="Agricultural innovation"
+            src="/images/women_at_work2.jpeg"
+            alt="Professional agricultural services in Ghana - Agrinvest Limited"
             fill
-            style={{ objectFit: "cover" }}
-            className="scale-105"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-agrinvest-green/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-brand opacity-20"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Badge className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-              <Leaf className="w-4 h-4 mr-2" />
-              Premium Agricultural Solutions
-            </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-              Transforming
-              <span className="block text-agrinvest-green">Agriculture</span>
-              <span className="block text-2xl md:text-3xl font-light mt-4 opacity-90">
-                Through Innovation & Excellence
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
-              We deliver world-class agricultural solutions that empower farmers,
-              boost productivity, and create sustainable prosperity across Ghana.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-agrinvest-green hover:bg-agrinvest-green/90 text-white shadow-xl">
-                <Link href="#services" className="flex items-center">
-                  Explore Our Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10 backdrop-blur-sm">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Our Story
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Floating Elements */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <ArrowRight className="h-6 w-6 rotate-90" />
-        </div>
+        <motion.div
+          variants={sectionVariants}
+          className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white"
+        >
+          {/* <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+            <Target className="h-10 w-10 text-white" />
+          </div> */}
+          <Badge variant="outline" className="mb-8 border-white/30 text-white glass backdrop-blur-md">
+            Comprehensive Agricultural Solutions
+          </Badge>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 font-heading leading-none">
+            Our <br />
+            <span className="text-gradient-brand bg-gradient-to-r from-agrinvest-green-400 to-agrinvest-blue-400 bg-clip-text text-transparent">Services</span>
+          </h1>
+          <p className="text-xl md:text-3xl mb-6 max-w-4xl mx-auto leading-relaxed font-light">
+            Professional Agricultural Excellence
+          </p>
+          <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed text-white/90">
+            Delivering comprehensive agricultural solutions that optimize farm productivity and streamline value chains across 7 regions of Ghana through strategic partnerships with USAID, IFAD, AfDB, and Government of Ghana
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button asChild size="lg" className="px-10 py-4 text-lg font-semibold shadow-brand border-0">
+              <Link href="/contact">
+                Get Started Today <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="glass border-white/30 px-10 py-4 text-lg backdrop-blur-md">
+              <Link href="/about">
+                Learn About Us
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Impact Stats */}
-      {/* <section className="py-20 bg-gradient-to-br from-agrinvest-green/5 to-agrinvest-blue/5">
+      {/* Impact Statistics */}
+      <section className="py-20 bg-gradient-to-br from-agrinvest-green-50 to-agrinvest-blue-50 dark:from-agrinvest-green-900/10 dark:to-agrinvest-blue-900/10">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={sectionVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-
-5xl font-bold mb-4">Our Impact in Numbers</h2>
-            <p className="text-xl text-muted-foreground">Measurable results that speak for themselves</p>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-brand-soft mb-6">
+              <TrendingUp className="h-8 w-8 text-agrinvest-green-600" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-heading">
+              Measurable Professional Impact
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              As a fully licensed agribusiness enterprise, we deliver measurable results across Ghana&apos;s agricultural sector through strategic investments in smallholder farmers, with special focus on women and youth empowerment
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {achievements.map((achievement, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={achievement.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="text-center group"
               >
-                <div className="mb-4 relative">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-${stat.color.replace('text-', '')}/20 to-${stat.color.replace('text-', '')}/10 group-hover:scale-110 transition-transform duration-300`}>
-                    <stat.icon className={`h-10 w-10 ${stat.color}`} />
+                <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl ${achievement.color} bg-current/10 mb-4 transition-transform group-hover:scale-110`}>
+                    <achievement.icon className={`h-8 w-8 ${achievement.color}`} />
                   </div>
-                </div>
-                <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}>
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground font-medium">
-                  {stat.label}
+                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                    {achievement.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium">
+                    {achievement.label}
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* Services Showcase */}
-      <section id="services" className="py-28">
+      {/* Services Overview */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
+            variants={sectionVariants}
+            className="text-center mb-16"
           >
-            <Badge className="mb-4" variant="outline">
-              Our Service Portfolio
-            </Badge>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Comprehensive
-              <span className="text-agrinvest-green"> Solutions</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-heading">
+              Comprehensive Service Portfolio
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From seed to market, we provide end-to-end agricultural solutions designed to maximize productivity and profitability
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              We provide integrated agricultural solutions designed to maximize value across the entire farming value chain, leveraging strategic partnerships and professional expertise for sustainable impact
             </p>
           </motion.div>
 
-          <div className="space-y-32">
+          <div className="space-y-16">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8 }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}
               >
-                {/* Content Side */}
-                <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div>
-                    <Badge className={`mb-4 bg-${service.color}/10 text-${service.color} border-${service.color}/20`}>
-                      {service.category}
-                    </Badge>
-                    <h3 className="text-3xl md:text-4xl font-bold mb-3">
-                      {service.title}
-                    </h3>
-                    <p className={`text-lg text-${service.color} font-semibold mb-4`}>
-                      {service.subtitle}
-                    </p>
-                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                      {service.fullDescription}
-                    </p>
-                  </div>
+                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                  <Badge variant="outline" className="mb-4">
+                    {service.category}
+                  </Badge>
+                  <h3 className="text-3xl font-bold text-foreground mb-4 font-heading">
+                    {service.title}
+                  </h3>
+                  <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                    {service.fullDescription}
+                  </p>
 
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-2 gap-4">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle2 className={`h-5 w-5 text-${service.color} flex-shrink-0`} />
-                        <span className="text-sm font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Metrics */}
-                  <div className={`inline-flex items-center space-x-4 p-6 rounded-2xl bg-${service.color}/10 border border-${service.color}/20`}>
-                    <div className={`text-3xl font-bold text-${service.color}`}>
-                      {service.metrics.increase}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-foreground">
-                        {service.metrics.unit}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        Average improvement
-                      </div>
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-foreground mb-4">Key Features:</h4>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <CheckCircle2 className={`h-5 w-5 ${service.color} mt-0.5 flex-shrink-0`} />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Testimonial */}
-                  <div className="bg-background/50 p-6 rounded-2xl border">
-                    <p className="text-foreground font-medium mb-3 italic">
-                      &quot;{service.testimonial}&quot;
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-10 h-10 rounded-full bg-${service.color}/20 flex items-center justify-center`}>
-                        <Users className={`h-5 w-5 text-${service.color}`} />
-                      </div>
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-foreground mb-4">Benefits:</h4>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {service.benefits.map((benefit, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <Star className={`h-5 w-5 ${service.color} mt-0.5 flex-shrink-0`} />
+                          <span className="text-muted-foreground">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className={`p-6 rounded-xl mb-8 ${service.color === 'agrinvest-green-600' ? 'bg-agrinvest-green-50 dark:bg-agrinvest-green-900/20' : service.color === 'agrinvest-blue-600' ? 'bg-agrinvest-blue-50 dark:bg-agrinvest-blue-900/20' : 'bg-agrinvest-gray-50 dark:bg-agrinvest-gray-900/20'} border ${service.color === 'agrinvest-green-600' ? 'border-agrinvest-green-200' : service.color === 'agrinvest-blue-600' ? 'border-agrinvest-blue-200' : 'border-agrinvest-gray-200'}`}>
+                    <div className="flex items-center gap-4">
+                      <service.icon className={`h-8 w-8 ${service.color}`} />
                       <div>
-                        <div className="font-semibold text-sm">{service.client}</div>
-                        <div className="text-xs text-muted-foreground">Verified Client</div>
+                        <div className={`text-2xl font-bold ${service.color}`}>
+                          {service.metrics.value}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {service.metrics.unit}
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <Button className={`bg-${service.color === 'amber-600' ? 'amber-600' : service.color === 'teal-600' ? 'teal-600' : service.color} hover:bg-${service.color}/90 text-white`}>
-                    <Link href={`/contact?service=${service.id}`} className="flex items-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button asChild size="lg" className={`text-white shadow-soft ${service.color === 'agrinvest-green-600' ? 'bg-agrinvest-green-600 hover:bg-agrinvest-green-700 shadow-brand' : service.color === 'agrinvest-blue-600' ? 'bg-agrinvest-blue-600 hover:bg-agrinvest-blue-700 shadow-brand-blue' : 'bg-agrinvest-gray-600 hover:bg-agrinvest-gray-700'}`}>
+                    <Link href="/contact">
+                      Learn More About This Service <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                 </div>
 
-                {/* Image Side */}
-                <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden group">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-
-                    {/* Floating Icon */}
-                    <div className="absolute top-6 right-6">
-                      <div className={`p-4 rounded-2xl bg-background/40 backdrop-blur-sm shadow-lg `}>
-                        <service.icon className={`h-8 w-8 text-${service.color}`} />
-                      </div>
-                    </div>
-
-                    {/* Bottom Overlay */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-background/90 backdrop-blur-sm p-4 rounded-2xl">
-                        <h4 className="font-bold text-foreground mb-1">{service.title}</h4>
-                        <p className="text-sm text-muted-foreground">{service.description}</p>
-                      </div>
-                    </div>
+                <div className={`relative h-96 rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? 'lg:col-start-1' : ''
+                  }`}>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <Badge className={`text-white mb-2 ${service.color === 'agrinvest-green-600' ? 'bg-agrinvest-green-600' : service.color === 'agrinvest-blue-600' ? 'bg-agrinvest-blue-600' : 'bg-agrinvest-gray-600'}`}>
+                      {service.category}
+                    </Badge>
+                    <p className="text-lg font-semibold">{service.subtitle}</p>
                   </div>
                 </div>
               </motion.div>
@@ -363,77 +327,38 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-28 bg-gradient-to-br from-agrinvest-green/5 via-background to-agrinvest-blue/5">
+      {/* Focus Crops Section */}
+      <section className="py-20 bg-gradient-to-br from-agrinvest-gray-50 to-agrinvest-green-50 dark:from-agrinvest-gray-900/10 dark:to-agrinvest-green-900/10">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
+            variants={sectionVariants}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Proven Process
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-brand-soft mb-6">
+              <Wheat className="h-8 w-8 text-agrinvest-green-600" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-heading">
+              Our Focus Crops
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A systematic approach to agricultural transformation that delivers consistent results
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Maximizing value for seven key staple and cash crops through integrated solutions
+              across 7 regions of Ghana including Ashanti, Upper West, Northern, Bono East, Bono, North East, and Savannah
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                step: "01",
-                title: "Discovery & Assessment",
-                description: "We conduct comprehensive analysis of your current operations, challenges, and growth potential.",
-                color: "agrinvest-green",
-                image: "/images/assessment.jpg"
-              },
-              {
-                step: "02",
-                title: "Strategy & Implementation",
-                description: "Custom solutions are designed and deployed with full training and ongoing support.",
-                color: "amber-600",
-                image: "/images/implementation.jpg"
-              },
-              {
-                step: "03",
-                title: "Growth & Optimization",
-                description: "Continuous monitoring and optimization ensure sustainable growth and maximum returns.",
-                color: "teal-600",
-                image: "/images/growth.jpg"
-              }
-            ].map((process, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            {["Maize", "Soybeans", "Cowpeas", "Groundnuts", "Pineapples", "Cassava", "Rice"].map((crop, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
+                key={crop}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="group"
+                className="text-center group"
               >
-                <Card className="h-full overflow-hidden border-2 border-transparent hover:border-agrinvest-green/20 transition-all duration-300">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={process.image}
-                      alt={process.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className={`absolute top-4 left-4 w-12 h-12 rounded-full bg-${process.color}/10 flex items-center justify-center text-white font-bold text-lg`}>
-                      {process.step}
-                    </div>
-                  </div>
-                  <CardContent className="p-8">
-                    <h3 className={`text-xl font-bold text-${process.color} mb-4`}>
-                      {process.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {process.description}
-                    </p>
-                  </CardContent>
+                <Card className="p-6 border-0 shadow-soft hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
+                  <Wheat className="h-8 w-8 text-agrinvest-green-600 mx-auto mb-3 transition-transform group-hover:scale-110" />
+                  <p className="font-semibold text-sm text-foreground">{crop}</p>
                 </Card>
               </motion.div>
             ))}
@@ -441,79 +366,118 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Recognition Section */}
-      <section className="py-20 bg-background">
+      {/* Regional Coverage */}
+      <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={sectionVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Recognition & Partnerships</h2>
-            <p className="text-lg text-muted-foreground">Trusted by leading organizations and recognized for excellence</p>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-brand-soft mb-6">
+              <Globe className="h-8 w-8 text-agrinvest-green-600" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-heading">
+              Regional Coverage Across Ghana
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Strategically positioned to serve agricultural communities across 7 key regions,
+              with headquarters in Ejisu-Abankro for optimal operational efficiency
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {achievements.map((achievement, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-16">
+            {["Ashanti", "Upper West", "Northern", "Bono East", "Bono", "North East", "Savannah"].map((region, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={region}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-gradient-to-br from-agrinvest-green/5 to-agrinvest-blue/5 border"
+                className="text-center group"
               >
-                <achievement.icon className="h-12 w-12 text-agrinvest-green mx-auto mb-4" />
-                <h3 className="text-lg font-bold mb-2">{achievement.title}</h3>
-                <p className="text-muted-foreground text-sm">{achievement.desc}</p>
+                <Card className="p-6 border-0 shadow-soft hover:shadow-medium transition-all duration-300 group-hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-brand-soft mb-3 transition-transform group-hover:scale-110">
+                    <Globe className="h-6 w-6 text-agrinvest-green-600" />
+                  </div>
+                  <p className="font-semibold text-sm text-foreground">{region}</p>
+                  <p className="text-xs text-muted-foreground mt-1">Region</p>
+                </Card>
               </motion.div>
             ))}
           </div>
+
+
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/cta-background.jpg"
-            alt="Agricultural success"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-agrinvest-green/95 via-agrinvest-blue/90 to-agrinvest-green/95" />
+      {/* CTA Section */}
+      <section className="py-20 md:py-32 bg-gradient-brand text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white/5 rounded-full blur-lg"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center text-white max-w-4xl mx-auto"
+            variants={sectionVariants}
+            className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Transform Your Agricultural Future?
+            {/* <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+              <Leaf className="h-10 w-10 text-white" />
+            </div> */}
+
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 font-heading leading-tight">
+              Partner with Ghana&apos;s Leading
+              <br />
+              <span className="text-white/90">Agribusiness Enterprise</span>
             </h2>
-            <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-              Join thousands of successful farmers who have revolutionized their operations with Agrinvest.
-              Let&apos;s build something extraordinary together.
+
+            <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-3xl mx-auto">
+              Join 7,487 farmers who have transformed their agricultural operations through our professional services. Partner with a fully licensed enterprise backed by USAID, IFAD, AfDB, and Government of Ghana.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-white text-agrinvest-green hover:bg-white/90 shadow-xl px-8 py-4">
-                <Link href="/contact" className="flex items-center">
-                  Start Your Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-agrinvest-blue-700 hover:bg-white/90 px-10 py-4 text-lg font-semibold shadow-large border-0"
+              >
+                <Link href="/contact">
+                  Partner With Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4">
-                <Link href="/about">Discover Our Story</Link>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="glass border-white/30 text-white hover:bg-white hover:text-agrinvest-blue-700 px-10 py-4 text-lg backdrop-blur-md"
+              >
+                <Link href="/about">
+                  Learn About Us
+                </Link>
               </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="glass rounded-2xl p-6 backdrop-blur-md border border-white/20">
+                <div className="text-2xl font-bold mb-2">7</div>
+                <div className="text-white/80 text-sm">Key Crop Varieties</div>
+              </div>
+              <div className="glass rounded-2xl p-6 backdrop-blur-md border border-white/20">
+                <div className="text-2xl font-bold mb-2">7</div>
+                <div className="text-white/80 text-sm">Regions Covered</div>
+              </div>
+              <div className="glass rounded-2xl p-6 backdrop-blur-md border border-white/20">
+                <div className="text-2xl font-bold mb-2">3</div>
+                <div className="text-white/80 text-sm">Service Categories</div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 };
 

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Leaf, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Leaf, Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import * as React from 'react';
 
 const pageVariants = {
@@ -83,40 +83,66 @@ const ContactPage = () => {
     >
       <motion.div
         variants={itemVariants}
-        className="text-center mb-12 md:mb-16"
+        className="text-center mb-16 md:mb-20"
       >
-        <Mail className="h-12 w-12 text-primary mx-auto mb-3" />
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground font-heading">
-          Contact Us
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-brand-soft mb-8">
+          <Mail className="h-10 w-10 text-agrinvest-green-600" />
+        </div>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground font-heading mb-6 leading-tight">
+          Get in <span className="text-gradient-brand">Touch</span>
         </h1>
-        <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
-          We&apos;d love to hear from you! Whether you have a question about our services, partnerships, or anything else, our team is ready to answer all your inquiries.
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          Connect with Agrinvest Limited to learn how we can support your agricultural operations.
+          Our team is ready to discuss partnerships, services, and opportunities for growth.
         </p>
+        <div className="mt-8 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <CheckCircle className="h-4 w-4 text-agrinvest-green-600" />
+            <span>Professional Support</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle className="h-4 w-4 text-agrinvest-green-600" />
+            <span>Quick Response</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle className="h-4 w-4 text-agrinvest-green-600" />
+            <span>Expert Guidance</span>
+          </div>
+        </div>
       </motion.div>
 
       <div className="grid lg:grid-cols-5 gap-10 md:gap-12">
         {/* Contact Form */}
         <motion.div variants={itemVariants} className="lg:col-span-3">
-          <Card className="shadow-lg dark:shadow-primary/10">
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary flex items-center gap-2 font-heading">
-                <Send className="h-6 w-6" /> Send Us a Message
-              </CardTitle>
-              <CardDescription>
-                Fill out the form below and we&apos;ll get back to you as soon as possible.
-              </CardDescription>
+          <Card className="shadow-large border-0 bg-white dark:bg-gray-800">
+            <CardHeader className="pb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-brand-soft">
+                  <Send className="h-6 w-6 text-agrinvest-green-600" />
+                </div>
+                <div>
+                  <CardTitle className="text-2xl md:text-3xl text-foreground font-heading">
+                    Send Us a Message
+                  </CardTitle>
+                  <CardDescription className="text-base mt-1">
+                    Fill out the form below and we&apos;ll get back to you within 24-48 hours.
+                  </CardDescription>
+                </div>
+              </div>
             </CardHeader>
             <CardContent>
               {apiResponse && apiResponse.success ? (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-center p-6 bg-primary/10 rounded-md"
+                  className="text-center p-8 bg-gradient-brand-soft rounded-2xl border border-agrinvest-green-200"
                 >
-                  <Leaf className="h-10 w-10 text-primary mx-auto mb-3" />
-                  <h3 className="text-xl font-semibold text-primary mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground">{apiResponse.message}</p>
-                  <Button onClick={handleSendAnother} variant="outline" className="mt-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-agrinvest-green-100 mb-4">
+                    <Leaf className="h-8 w-8 text-agrinvest-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-agrinvest-green-700 mb-3">Message Sent Successfully!</h3>
+                  <p className="text-muted-foreground mb-6">{apiResponse.message}</p>
+                  <Button onClick={handleSendAnother} variant="outline" className="border-agrinvest-green-300 text-agrinvest-green-700 hover:bg-agrinvest-green-50">
                     Send Another Message
                   </Button>
                 </motion.div>
@@ -161,15 +187,15 @@ const ContactPage = () => {
                     {apiResponse?.errors?.message && <p className="text-xs text-destructive">{apiResponse.errors.message.join(', ')}</p>}
                   </div>
                   <div>
-                    <Button type="submit" className="w-full sm:w-auto bg-agrinvest-green text-agrinvest-green-foreground hover:bg-agrinvest-green/90" disabled={isLoading}>
+                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-agrinvest-green-600 hover:bg-agrinvest-green-700 text-white px-8 py-4 shadow-brand" disabled={isLoading}>
                       {isLoading ? (
                         <motion.span
                           animate={{ rotate: 360 }}
                           transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                          className="w-4 h-4 border-2 border-background border-t-transparent rounded-full inline-block mr-2"
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full inline-block mr-3"
                         ></motion.span>
-                      ) : <Send className="mr-2 h-4 w-4" />}
-                      {isLoading ? "Sending..." : "Send Message"}
+                      ) : <Send className="mr-3 h-5 w-5" />}
+                      {isLoading ? "Sending Message..." : "Send Message"}
                     </Button>
                   </div>
                 </form>
@@ -180,75 +206,132 @@ const ContactPage = () => {
 
         {/* Contact Details */}
         <motion.div variants={itemVariants} className="lg:col-span-2">
-          <Card className="shadow-lg dark:shadow-primary/10 h-full">
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary flex items-center gap-2 font-heading">
-                {/* <MapPin className="h-6 w-6" />  */}
-                Get In Touch
-              </CardTitle>
-              <CardDescription>
-                Find us at our office or reach out via phone or email.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6 text-foreground/90">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
+          <Card className="shadow-large border-0 bg-white dark:bg-gray-800 h-full">
+            <CardHeader className="pb-6">
+              <div className="flex items-center gap-3 mb-4">
+                {/* <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-brand-soft">
+                  <MapPin className="h-6 w-6 text-agrinvest-blue-600" />
+                </div> */}
                 <div>
-                  <h4 className="font-semibold">Our Office</h4>
-                  <p className="text-muted-foreground">
-                    {/* <br /> */}
-                    Ejisu, Ghana <br />
-                    {/* Replace with actual district/region if more specific */}
-                    Ashanti Region
+                  <CardTitle className="text-2xl md:text-3xl text-foreground font-heading">
+                    Visit Our Office
+                  </CardTitle>
+                  <CardDescription className="text-base mt-1">
+                    Located in Ejisu-Abankro, strategically positioned to serve Ghana&apos;s agricultural regions.
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-8 text-foreground">
+              <div className="bg-gradient-brand-soft rounded-xl p-6 border border-agrinvest-green-200/50">
+                <div className="flex items-start gap-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg ">
+                    <MapPin className="h-5 w-5 text-agrinvest-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Our Office</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Ejisu-Abankro<br />
+                      Ashanti Region, Ghana<br />
+                      <span className="text-sm text-agrinvest-green-600 font-medium">Strategically positioned to serve Ghana</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg ">
+                    <Phone className="h-5 w-5 text-agrinvest-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Phone</h4>
+                    <a href={`tel:+${CONTACT}`} className="text-muted-foreground hover:text-agrinvest-blue-600 transition-colors text-lg">
+                      +{CONTACT}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg ">
+                    <Mail className="h-5 w-5 text-agrinvest-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Email</h4>
+                    <a href={`mailto:${EMAIL}`} className="text-muted-foreground hover:text-agrinvest-blue-600 transition-colors text-lg">
+                      {EMAIL}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-border">
+                <h4 className="font-bold text-lg text-foreground mb-4">Office Hours</h4>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground flex justify-between">
+                    <span>Monday - Friday:</span>
+                    <span className="font-medium">9:00 AM - 5:00 PM</span>
+                  </p>
+                  <p className="text-muted-foreground flex justify-between">
+                    <span>Saturday - Sunday:</span>
+                    <span className="font-medium">Closed</span>
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Phone</h4>
-                  <a href={`tel:+${CONTACT}`} className="text-muted-foreground hover:text-secondary transition-colors">
-                    +{CONTACT} {/* Replace with actual number */}
-                  </a>
+
+              {/* <div className="bg-gradient-to-br from-agrinvest-blue-50 to-agrinvest-green-50 rounded-xl p-6 border border-agrinvest-blue-200/50">
+                <h4 className="font-bold text-lg text-foreground mb-3">Service Areas</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-agrinvest-green-600">Northern</div>
+                    <div className="text-sm text-muted-foreground">Region</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-agrinvest-blue-600">Upper West</div>
+                    <div className="text-sm text-muted-foreground">Region</div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <a href={`mailto:${EMAIL}`} className="text-muted-foreground hover:text-secondary transition-colors">
-                    {EMAIL} {/* Replace with actual email */}
-                  </a>
-                </div>
-              </div>
-              <div className="pt-4 border-t border-border/50">
-                <h4 className="font-semibold mb-2">Opening Hours</h4>
-                <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                <p className="text-muted-foreground">Saturday - Sunday: Closed</p>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </motion.div>
       </div>
 
-      {/* Optional: Map Section */}
-      <motion.div variants={itemVariants} className="mt-16 md:mt-24">
-        <Card className="overflow-hidden">
-          <CardHeader>
-            <CardTitle className="text-xl text-primary font-heading">Our Location</CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
-            {/* Replace the src attribute with your actual Google Maps embed link */}
+      {/* Enhanced Map Section */}
+      <motion.div variants={itemVariants} className="mt-20 md:mt-32">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-heading">
+            Visit Our Headquarters
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Located in Ejisu-Abankro, our office is strategically positioned to serve agricultural
+            communities across Ghana.
+          </p>
+        </div>
+
+        <Card className="overflow-hidden shadow-large border-0">
+          <CardContent className="p-0 relative">
             <iframe
-              src={MAPS} // Default to Kumasi, Ghana
+              src={MAPS}
               width="100%"
-              height="400" // You can adjust height as needed, e.g., h-64 md:h-96 for Tailwind
+              height="500"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-64 md:h-96 rounded-b-lg" // Added rounded-b-lg to match card
+              className="w-full h-80 md:h-[500px] rounded-lg"
             ></iframe>
+            {/* <div className="absolute top-6 left-6 glass rounded-xl p-4 backdrop-blur-md border border-white/20">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-agrinvest-green-600">
+                  <MapPin className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900">Agrinvest Limited</h3>
+                  <p className="text-sm text-muted-foreground">Ejisu-Abankro, Ghana</p>
+                </div>
+              </div>
+            </div> */}
           </CardContent>
         </Card>
       </motion.div>

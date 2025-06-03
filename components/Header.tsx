@@ -3,11 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Leaf, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
+import Logo from '@/components/ui/logo';
 
 import {
   NavigationMenu,
@@ -26,6 +27,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 interface NavLinkItem {
   href: string;
@@ -68,11 +70,12 @@ const Header = () => {
     // To prevent hydration mismatch for ThemeToggle and active link states
     // Render a simplified, static version or a skeleton
     return (
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-soft">
         <div className="container mx-auto h-16 flex items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 group">
-            <Leaf className="h-7 w-7 text-primary" />
-            <span className="text-2xl font-bold text-primary">Agrinvest</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            {/* <Leaf className="h-8 w-8 text-agrinvest-green-600" /> */}
+            <Image src="/agrinvest_favicon.png" alt="Agrinvest Logo" width={32} height={32} />
+            <span className="text-2xl font-bold bg-gradient-to-r from-agrinvest-green-600 to-agrinvest-blue-600 bg-clip-text text-transparent">Agrinvest</span>
           </Link>
           {/* Placeholder for mobile menu button and theme toggle to maintain layout */}
           <div className="flex items-center gap-2 md:hidden">
@@ -92,14 +95,11 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-soft">
       <div className="container mx-auto h-16 flex items-center justify-between px-4 md:px-6">
         <motion.div variants={logoVariants} initial="hidden" animate="visible">
-          <Link href="/" className="flex items-center gap-2 group">
-            <Leaf className="h-7 w-7 text-primary transition-transform group-hover:rotate-[-12deg] duration-300 ease-out" />
-            <span className="text-2xl font-bold text-primary group-hover:text-primary/90 transition-colors font-heading">
-              Agrinvest
-            </span>
+          <Link href="/" className="group">
+            <Logo size="md" variant="color" />
           </Link>
         </motion.div>
 
@@ -125,11 +125,11 @@ const Header = () => {
                         active={isActive}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "!bg-transparent focus:!bg-accent/50",
+                          "!bg-transparent focus:!bg-accent/50 relative",
                           isActive
-                            ? "font-semibold text-primary"
-                            : "text-foreground/70 hover:text-primary",
-                          "transition-colors duration-200 ease-out"
+                            ? "font-semibold text-agrinvest-green-600"
+                            : "text-foreground/80 hover:text-agrinvest-green-600",
+                          "transition-all duration-300 ease-out hover:bg-agrinvest-green-50 dark:hover:bg-agrinvest-green-950/20"
                         )}
                       >
                         <motion.span variants={navItemVariants} className="z-10 relative">
@@ -140,14 +140,14 @@ const Header = () => {
                     <AnimatePresence>
                       {(isActive || hoveredPath === link.href) && (
                         <motion.div
-                          className="absolute bottom-[1px] left-0 right-0 h-[2.5px] bg-primary z-0"
+                          className="absolute bottom-[1px] left-0 right-0 h-[3px] bg-gradient-to-r from-agrinvest-green-500 to-agrinvest-blue-500 z-0 rounded-full"
                           layoutId="underline"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          animate={{ opacity: 1, scaleX: 1 }}
+                          exit={{ opacity: 0, scaleX: 0 }}
                           transition={{
                             type: "spring",
-                            stiffness: 380,
+                            stiffness: 400,
                             damping: 30,
                             opacity: { duration: 0.2 }
                           }}
@@ -173,10 +173,9 @@ const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[280px] sm:w-[320px] pt-10">
-              <SheetHeader className="mb-6">
-                <SheetTitle className="flex items-center gap-2 text-left">
-                  <Leaf className="h-6 w-6 text-primary" />
-                  <span className="text-xl font-bold text-primary font-heading">Agrinvest</span>
+              <SheetHeader className="mb-8">
+                <SheetTitle className="text-left">
+                  <Logo size="sm" variant="color" />
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-2">
@@ -187,8 +186,10 @@ const Header = () => {
                       <Link
                         href={link.href}
                         className={cn(
-                          "block px-3 py-2 rounded-md text-base font-medium hover:bg-accent transition-colors",
-                          isActive ? "bg-primary/10 text-primary font-semibold" : "text-foreground/80 hover:text-accent-foreground"
+                          "block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300",
+                          isActive
+                            ? "bg-gradient-brand-soft text-agrinvest-green-700 font-semibold shadow-soft"
+                            : "text-foreground/80 hover:text-agrinvest-green-600 hover:bg-agrinvest-green-50 dark:hover:bg-agrinvest-green-950/20"
                         )}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

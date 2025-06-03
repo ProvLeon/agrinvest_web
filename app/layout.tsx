@@ -1,27 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Lexend } from "next/font/google"; // Import Google Fonts
 import AppShell from "@/components/AppShell"; // Import the new client component
 import "./globals.css";
 
-// Configure Inter font for body
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap", // Ensures text remains visible during font loading
-  variable: "--font-inter", // CSS variable for Inter
-  weight: ["400", "500", "600", "700"], // Import desired weights
-});
-
-// Configure Lexend font for headings
-const lexend = Lexend({
-  subsets: ["latin"],
-  display: "swap", // Ensures text remains visible during font loading
-  variable: "--font-lexend", // CSS variable for Lexend
-  weight: ["400", "500", "600", "700"], // Import desired weights
-});
-
 export const metadata: Metadata = {
-  title: "Agrinvest Ghana - Scaling Up Agricultural Investments",
-  description: "Positioned to meet Ghana's increasing demand for high quality grains, cereals and vegetables through comprehensive investment in the smallholder farmer.",
+  title: "Agrinvest Limited - Empowering Ghanaian Smallholder Farmers",
+  description: "Established in 2018, Agrinvest Limited is a fully licensed agribusiness enterprise providing farm-to-table integrated value chain solutions. Serving 7,487 farmers across 7 regions in Ghana through high-quality inputs, mechanization services, and capacity building programs.",
+  keywords: "Ghana agriculture, smallholder farmers, agricultural development, farm inputs, mechanization, USAID, IFAD, AfDB, sustainable farming, Ejisu-Abankro",
+  authors: [{ name: "Agrinvest Limited" }],
+  openGraph: {
+    title: "Agrinvest Limited - Empowering Ghanaian Smallholder Farmers",
+    description: "Established in 2018, serving 7,487 farmers across Ghana with comprehensive agricultural solutions.",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${lexend.variable} font-sans antialiased flex flex-col min-h-screen`}
+        className="font-sans antialiased flex flex-col min-h-screen"
       >
         <AppShell>{children}</AppShell>
       </body>
