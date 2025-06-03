@@ -6,9 +6,9 @@
   "author": "Agrinvest Limited",
   "homepage": "https://investinagric.com",
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node api.js && next dev --turbo",
+    "build": "node api.js && next build",
+    "start": "node api.js && next start",
     "lint": "next lint"
   },
   "dependencies": {

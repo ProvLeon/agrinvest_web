@@ -160,9 +160,23 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        heading: ["var(--font-poppins)", "Poppins", "var(--font-inter)", "Inter", "system-ui", "sans-serif"],
         mono: ["Consolas", "Monaco", "Courier New", "monospace"],
+      },
+      letterSpacing: {
+        'poppins-tight': '0.015em',
+        'poppins-normal': '0.025em',
+        'poppins-relaxed': '0.035em',
+        'poppins-loose': '0.045em',
+        'poppins-hero': '0.03em',
+      },
+      lineHeight: {
+        'poppins-tight': '1.25',
+        'poppins-normal': '1.3',
+        'poppins-relaxed': '1.4',
+        'poppins-loose': '1.5',
+        'poppins-hero': '1.2',
       },
       boxShadow: {
         'soft': '0 4px 20px -3px rgba(0, 0, 0, 0.08), 0 12px 25px -2px rgba(0, 0, 0, 0.05)',
