@@ -40,5 +40,7 @@ yarn-error.log*
 next-env.d.ts
 *_.DS_Store
 *_hero*
-*._*.{jpg,png,jpeg,gif,svg}
+*._*.{jpg,png,jpeg,gif,svg,ttf}
 *._*.heic
+temp_auto_push.bat
+temp_interactive_push.bat

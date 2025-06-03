@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Poppins Font Spacing Adjustments */
+.font-poppins,
+.font-heading,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-poppins), 'Poppins', var(--font-inter), Inter, system-ui, sans-serif;
+    letter-spacing: 0.025em !important;
+    line-height: 1.3 !important;
+    word-spacing: 0.1em !important;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -110,8 +125,10 @@
     h5,
     h6 {
         @apply font-heading;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
+        line-height: 1.3;
+        letter-spacing: 0.025em;
+        word-spacing: 0.1em;
+        font-weight: 600;
     }
 }
 
@@ -121,7 +138,7 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans;
         font-feature-settings: "rlig" 1, "calt" 1;
         /* Enable ligatures and contextual alternates */
         font-optical-sizing: auto;
@@ -130,7 +147,7 @@
         text-rendering: optimizeLegibility;
     }
 
-    /* Headings */
+    /* Headings - Apply Poppins font */
     h1,
     h2,
     h3,
@@ -138,8 +155,86 @@
     h5,
     h6 {
         @apply font-heading;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
+        line-height: 1.3;
+        letter-spacing: 0.025em;
+        word-spacing: 0.1em;
+        font-weight: 600;
+    }
+
+    /* Ensure Inter is used for body text */
+    p,
+    span,
+    div,
+    a,
+    li,
+    td,
+    th {
+        font-family: var(--font-inter), Inter, system-ui, sans-serif;
+    }
+
+    /* Poppins for specific heading elements */
+    .font-heading,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-poppins), 'Poppins', var(--font-inter), Inter, system-ui, sans-serif;
+        letter-spacing: 0.025em;
+        line-height: 1.3;
+        word-spacing: 0.1em;
+    }
+
+    /* Additional spacing for larger headings */
+    h1 {
+        letter-spacing: 0.03em;
+        line-height: 1.25;
+        word-spacing: 0.12em;
+    }
+
+    h2 {
+        letter-spacing: 0.025em;
+        line-height: 1.3;
+        word-spacing: 0.1em;
+    }
+
+    /* Button and badge text using Poppins should also have proper spacing */
+    .font-heading {
+        letter-spacing: 0.025em;
+        word-spacing: 0.1em;
+    }
+
+    /* Utility classes for different Poppins spacing levels */
+    .poppins-tight {
+        letter-spacing: 0.015em !important;
+        line-height: 1.25 !important;
+        word-spacing: 0.08em !important;
+    }
+
+    .poppins-normal {
+        letter-spacing: 0.025em !important;
+        line-height: 1.3 !important;
+        word-spacing: 0.1em !important;
+    }
+
+    .poppins-relaxed {
+        letter-spacing: 0.035em !important;
+        line-height: 1.4 !important;
+        word-spacing: 0.12em !important;
+    }
+
+    .poppins-loose {
+        letter-spacing: 0.045em !important;
+        line-height: 1.5 !important;
+        word-spacing: 0.15em !important;
+    }
+
+    /* For hero headings that need extra breathing room */
+    .poppins-hero {
+        letter-spacing: 0.03em !important;
+        line-height: 1.2 !important;
+        word-spacing: 0.12em !important;
     }
 
     /* Smooth focus transitions */
